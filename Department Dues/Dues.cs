@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 /*
-//The function of this program is to calculate the total amount of dues collected from each department in a faculty.
+//The function of this program is to calculate the total amount of dues collected from each faculty.
 //This is necessary for accountability of the executives.
 */
 namespace Department_Dues
@@ -25,16 +25,16 @@ namespace Department_Dues
     
     
     /// <summary>
-    /// Calculates total dues in the faculty
+    /// Calculates total dues in each faculty
     /// </summary>
     public class TotalDuesInFaculty
     {
-        public double TotalDuesFac(List<double> deptDues)
+        public double TotalDuesFac(List<DeptDues> deptDues)
         {
             double amount=0;
             foreach(var deptDue in deptDues)
             {
-                amount+= deptDue;
+                amount += deptDue.TotalDeptDues();
             }
 
             return amount;
@@ -44,9 +44,9 @@ namespace Department_Dues
     //Derived class, derived from the base class DeptDues
     /// <summary>
     ///  Derived from the base class DeptDues
-    ///  calculates total dues in department of computer science
+    ///  calculates total dues in a department in science
     /// </summary>
-    public class CompScience:DeptDues
+    public class Science:DeptDues
     {
         public int DinnerFee { get; set; }
         public int GeneratedRevenues { get; set; }
@@ -58,12 +58,12 @@ namespace Department_Dues
 
     }
 
-    
+
     /// <summary>
     ///  Derived from the base class DeptDues
-    /// calculates total dues in department of geology
+    /// calculates total dues in a department in science
     /// </summary>
-    public class Geology : DeptDues
+    public class Art : DeptDues
     {
         
         public int GeneratedRevenues { get; set; }
