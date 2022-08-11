@@ -5,12 +5,13 @@
         static void Main(string[] args)
         {
             TotalDuesInFaculty totalDuesInFaculty = new TotalDuesInFaculty();
+            // List to handle all the dues imputed
             List<double> dues = new List<double>();
 
             Console.WriteLine("Computer Science: \n");
             CompScience compSci =new CompScience();
 
-            //The try is to catch any invalid error when taking input
+            //try catch block to handle exceptions thrown
             try
             {
                 Console.WriteLine("Dinner Fee: ");
@@ -31,7 +32,7 @@
             }
             
             
-
+            //Instantiation of class Geology
             Console.WriteLine("\n\nGeology Department: ");
             Geology geology = new Geology();
 

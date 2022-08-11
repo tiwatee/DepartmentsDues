@@ -25,7 +25,7 @@ namespace Department_Dues
     
     
     /// <summary>
-    /// calculates total dues in the faculty
+    /// Calculates total dues in the faculty
     /// </summary>
     public class TotalDuesInFaculty
     {
@@ -43,7 +43,7 @@ namespace Department_Dues
 
     //Derived class, derived from the base class DeptDues
     /// <summary>
-    ///  derived from the base class DeptDues
+    ///  Derived from the base class DeptDues
     ///  calculates total dues in department of computer science
     /// </summary>
     public class CompScience:DeptDues
@@ -60,14 +60,12 @@ namespace Department_Dues
 
     
     /// <summary>
-    /// Derived class, derived from the base class DeptDues
+    ///  Derived from the base class DeptDues
     /// calculates total dues in department of geology
     /// </summary>
     public class Geology : DeptDues
     {
-        /// <summary>
-        /// 
-        /// </summary>
+        
         public int GeneratedRevenues { get; set; }
         public int Excursion { get; set; }
         public override double TotalDeptDues()
