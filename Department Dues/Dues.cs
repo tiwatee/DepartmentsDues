@@ -52,8 +52,17 @@ namespace Department_Dues
         public int GeneratedRevenues { get; set; }
         public override double TotalDeptDues()
         {
-            double totalDeptDues = ((BasicDues + DinnerFee) * NoOfStudents) + GeneratedRevenues;
-            return totalDeptDues;
+            try
+            {
+                double totalDeptDues = ((BasicDues + DinnerFee) * NoOfStudents) + GeneratedRevenues;
+                return totalDeptDues;
+            }
+            catch (Exception err)
+            {
+
+                Console.WriteLine("Invalid: "+err.Message);
+                return 0;
+            }
         }
 
     }
@@ -70,8 +79,17 @@ namespace Department_Dues
         public int Excursion { get; set; }
         public override double TotalDeptDues()
         {
-            double totalDeptDues = ((BasicDues + Excursion) * NoOfStudents) + GeneratedRevenues;
-            return totalDeptDues;
+            try
+            {
+                double totalDeptDues = ((BasicDues + Excursion) * NoOfStudents) + GeneratedRevenues;
+                return totalDeptDues;
+            }
+            catch (Exception err)
+            {
+
+                Console.WriteLine("Invalid: "+err.Message);
+                return 0;
+            }
         }
 
     }
