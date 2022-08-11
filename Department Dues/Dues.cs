@@ -11,7 +11,11 @@ using System.Threading.Tasks;
 namespace Department_Dues
 
 {
-    //Abstract class which is the base class
+
+    /// <summary>
+    /// Abstract class which is the base class
+    /// This is the class that is extended by other classes
+    /// </summary>
     public abstract class DeptDues
     {
         public int BasicDues { get; set; }
@@ -19,7 +23,10 @@ namespace Department_Dues
         public abstract double TotalDeptDues();
     }
     
-    //
+    
+    /// <summary>
+    /// calculates total dues in the faculty
+    /// </summary>
     public class TotalDuesInFaculty
     {
         public double TotalDuesFac(List<double> deptDues)
@@ -35,6 +42,10 @@ namespace Department_Dues
     }
 
     //Derived class, derived from the base class DeptDues
+    /// <summary>
+    ///  derived from the base class DeptDues
+    ///  calculates total dues in department of computer science
+    /// </summary>
     public class CompScience:DeptDues
     {
         public int DinnerFee { get; set; }
@@ -47,14 +58,21 @@ namespace Department_Dues
 
     }
 
-    //Derived class, derived from the base class DeptDues
+    
+    /// <summary>
+    /// Derived class, derived from the base class DeptDues
+    /// calculates total dues in department of geology
+    /// </summary>
     public class Geology : DeptDues
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public int GeneratedRevenues { get; set; }
         public int Excursion { get; set; }
         public override double TotalDeptDues()
         {
-            double totalDeptDues = ((BasicDues + Excursion ) * NoOfStudents) + GeneratedRevenues;
+            double totalDeptDues = ((BasicDues + Excursion) * NoOfStudents) + GeneratedRevenues;
             return totalDeptDues;
         }
 

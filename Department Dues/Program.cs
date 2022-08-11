@@ -10,6 +10,7 @@
             Console.WriteLine("Computer Science: \n");
             CompScience compSci =new CompScience();
 
+            //The try is to catch any invalid error when taking input
             try
             {
                 Console.WriteLine("Dinner Fee: ");
@@ -20,6 +21,8 @@
                 compSci.NoOfStudents = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Generated Revenue: ");
                 compSci.GeneratedRevenues = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Total Dues in Computer Science is "+ compSci.TotalDeptDues());
+                dues.Add(compSci.TotalDeptDues());
             }
             catch (Exception)
             {
@@ -27,8 +30,7 @@
                 Console.WriteLine("Invalid Input");
             }
             
-            Console.WriteLine("Total Dues in Computer Science is ",compSci.TotalDeptDues());
-            dues.Add(compSci.TotalDeptDues());
+            
 
             Console.WriteLine("\n\nGeology Department: ");
             Geology geology = new Geology();
@@ -43,6 +45,8 @@
                 geology.NoOfStudents = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Generated Revenue: ");
                 geology.GeneratedRevenues = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Total dues in Geology is " + geology.TotalDeptDues());
+                dues.Add(geology.TotalDeptDues());
             }
             catch (Exception)
             {
@@ -50,11 +54,7 @@
                 Console.WriteLine("Invalid Input");
             }
 
-
-            Console.WriteLine("Total dues in Geology is "+geology.TotalDeptDues());
-            dues.Add(geology.TotalDeptDues());
-
-            Console.WriteLine("Total dues in the faculty is",totalDuesInFaculty.TotalDuesFac(dues));
+            Console.WriteLine("Total dues in the faculty is"+totalDuesInFaculty.TotalDuesFac(dues));
         }
     }
 }
